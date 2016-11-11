@@ -1,0 +1,28 @@
+{
+  "name": "malta-html-minify",
+  "version": "0.0.5",
+  "description": "Malta plugin to minify html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://fedeghe@github.com/fedeghe/malta-html-minify.git"
+  },
+  "keywords": [
+    "malta",
+    "malta plugin",
+    "malta html minify",
+    "malta html minify plugin"
+  ],
+  "author": "Federico Ghedina <federico.ghedina@gmail.com>",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/fedeghe/malta-html-minify/issues"
+  },
+  "dependencies": {
+    "html-minifier": "^3.1.1",
+    "malta": ">=3.0.0"
+  },
+  "main": "./index.js"
+}
