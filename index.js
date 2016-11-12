@@ -27,7 +27,7 @@ function malta_html_minify(o, options) {
 
 		fs.writeFile(namePack, o.content, function(err) {
 			if (err == null) {
-				msg = 'plugin ' + path.basename(__filename) + ' wrote ' + namePack + ' (' + self.getSize(namePack) + ')';
+				msg = 'plugin ' + path.basename(path.dirname(__filename)).white() + ' wrote ' + namePack + ' (' + self.getSize(namePack) + ')';
 			} else {
 				console.log('[ERROR] html-minifier says:');
 				console.dir(err);
