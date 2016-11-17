@@ -17,22 +17,24 @@ function malta_html_minify(o, options) {
 	var self = this,
 		namePack = this.outName,
 		start = new Date(),
-		msg;
-
-	o.content = minify(o.content, options);
-
-	//o.name does not change
-
+		msg,
+		pluginName = path.basename(path.dirname(__filename)),
+		doErr = function (e) {
+			console.log(('[ERROR on ' + o.name + ' using ' + pluginName + '] :').red());
+			console.dir(e);
+			self.stop();
+		};
+	
+	try {
+		o.content = minify(o.content, options);
+	} catch(err) {
+		doErr(err);
+	}
+	
 	return function (solve, reject){
-
 		fs.writeFile(namePack, o.content, function(err) {
-			if (err == null) {
-				msg = 'plugin ' + path.basename(path.dirname(__filename)).white() + ' wrote ' + namePack + ' (' + self.getSize(namePack) + ')';
-			} else {
-				console.log('[ERROR] html-minifier says:');
-				console.dir(err);
-				self.stop();
-			}
+			err && doErr(err);
+			msg = 'plugin ' + pluginName.white() + ' wrote ' + namePack + ' (' + self.getSize(namePack) + ')';
 			solve(o);
 			self.notifyAndUnlock(start, msg);
 		});
