@@ -18,22 +18,17 @@ function malta_html_minify(o, options) {
 		namePack = this.outName,
 		start = new Date(),
 		msg,
-		pluginName = path.basename(path.dirname(__filename)),
-		doErr = function (e) {
-			console.log(('[ERROR on ' + o.name + ' using ' + pluginName + '] :').red());
-			console.dir(e);
-			self.stop();
-		};
+		pluginName = path.basename(path.dirname(__filename));
 	
 	try {
 		o.content = minify(o.content, options);
-	} catch(err) {
-		doErr(err);
+	} catch (err) {
+		self.doErr(err, o, pluginName);
 	}
 	
 	return function (solve, reject){
 		fs.writeFile(namePack, o.content, function(err) {
-			err && doErr(err);
+			err && self.doErr(err, o, pluginName);
 			msg = 'plugin ' + pluginName.white() + ' wrote ' + namePack + ' (' + self.getSize(namePack) + ')';
 			solve(o);
 			self.notifyAndUnlock(start, msg);
