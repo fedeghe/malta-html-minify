@@ -24,5 +24,4 @@ or in a script :
             console.log("content : \n" + o.content);
             'plugin' in o && console.log("plugin : " + o.plugin);
             console.log('=========');
-            */
         });
