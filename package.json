@@ -1,6 +1,6 @@
 {
   "name": "malta-html-minify",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Malta plugin to minify html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -16,13 +16,13 @@
     "malta html minify plugin"
   ],
   "author": "Federico Ghedina <federico.ghedina@gmail.com>",
-  "license": "UNLICENSED",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/fedeghe/malta-html-minify/issues"
   },
   "dependencies": {
     "html-minifier": "^3.1.1",
-    "malta": ">=3.0.0"
+    "malta": ">=3.4.0"
   },
   "main": "./index.js"
 }
