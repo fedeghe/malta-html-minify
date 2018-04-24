@@ -1,3 +1,10 @@
+---
+[![npm version](https://badge.fury.io/js/malta-html-minify.svg)](http://badge.fury.io/js/malta-html-minify)
+[![Dependencies](https://david-dm.org/fedeghe/malta-html-minify.svg)](https://david-dm.org/fedeghe/malta-html-minify)
+[![npm downloads](https://img.shields.io/npm/dt/malta-html-minify.svg)](https://npmjs.org/package/malta-html-minify)
+[![npm downloads](https://img.shields.io/npm/dm/malta-html-minify.svg)](https://npmjs.org/package/malta-html-minify)  
+---  
+
 This plugin can be used on: **.html** files and even on **.md** and **.pug** files after using the right plugin
 
 Options : all options of the [html-minifier package](https://www.npmjs.com/package/html-minifier)
@@ -8,7 +15,7 @@ malta app/source/index.html public -plugins=malta-html-minify[removeAttributeQuo
 ```
 or in the .json file :
 ```
-"app/source/index.html" : "public -plugins=malta-css-uglify...malta-html-minify[removeAttributeQuotes:true,minifyJS:true,removeComments:true,removeEmptyAttributes:true,removeEmptyElements:true,maxLineLength:100,collapseWhitespace:true]"
+"app/source/index.html" : "public -plugins=malta-html-minify[removeAttributeQuotes:true,minifyJS:true,removeComments:true,removeEmptyAttributes:true,removeEmptyElements:true,maxLineLength:100,collapseWhitespace:true]"
 ```
 or in a script : 
 ``` js
