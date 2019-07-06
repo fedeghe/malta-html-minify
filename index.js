@@ -20,19 +20,21 @@ function malta_html_minify(o, options) {
 		msg,
 		pluginName = path.basename(path.dirname(__filename));
 	
-	try {
-		o.content = minify(o.content, options);
-	} catch (err) {
-		self.doErr(err, o, pluginName);
-	}
-	
 	return function (solve, reject){
-		fs.writeFile(namePack, o.content, function(err) {
-			err && self.doErr(err, o, pluginName);
-			msg = 'plugin ' + pluginName.white() + ' wrote ' + namePack + ' (' + self.getSize(namePack) + ')';
-			solve(o);
-			self.notifyAndUnlock(start, msg);
-		});
+        try {
+            o.content = minify(o.content, options);
+            fs.writeFile(namePack, o.content, function(err) {
+                err && self.doErr(err, o, pluginName);
+                msg = 'plugin ' + pluginName.white() + ' wrote ' + namePack + ' (' + self.getSize(namePack) + ')';
+                err
+                    ? reject(`Plugin ${pluginName} write error:\n${err}`)
+                    : solve(o);
+                self.notifyAndUnlock(start, msg);
+            });
+        } catch (err) {
+            reject(`Plugin ${pluginName} minification error:\n${err}`)
+            self.doErr(err, o, pluginName);
+        }
 	};
 }
 malta_html_minify.ext = ['html', 'md', 'pug'];
