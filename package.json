@@ -1,28 +1,28 @@
 {
-  "name": "malta-html-minify",
-  "version": "1.0.5",
-  "description": "Malta plugin to minify html",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://fedeghe@github.com/fedeghe/malta-html-minify.git"
-  },
-  "keywords": [
-    "malta",
-    "malta plugin",
-    "malta html minify",
-    "malta html minify plugin"
-  ],
-  "author": "Federico Ghedina <federico.ghedina@gmail.com>",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/fedeghe/malta-html-minify/issues"
-  },
-  "dependencies": {
-    "html-minifier": "^3.5.21",
-    "malta": ">=3.8.14"
-  },
-  "main": "./index.js"
+    "name": "malta-html-minify",
+    "version": "1.0.5",
+    "description": "Malta plugin to minify html",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://fedeghe@github.com/fedeghe/malta-html-minify.git"
+    },
+    "keywords": [
+        "malta",
+        "malta plugin",
+        "malta html minify",
+        "malta html minify plugin"
+    ],
+    "author": "Federico Ghedina <fedeghe@gmail.com>",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/fedeghe/malta-html-minify/issues"
+    },
+    "dependencies": {
+        "html-minifier": "^3.5.21",
+        "malta": ">=3.8.14"
+    },
+    "main": "./index.js"
 }
