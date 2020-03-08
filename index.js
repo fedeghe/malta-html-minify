@@ -1,4 +1,3 @@
-require('malta').checkDeps('html-minifier');
 /**
  * malta-html-minify plugin
  * dependency : html-minifier
@@ -9,21 +8,22 @@ require('malta').checkDeps('html-minifier');
  * 
  * pipe support : yes
  */
-var minify = require("html-minifier").minify,
+const minify = require("html-minifier").minify,
 	path = require('path'),
 	fs = require('fs');
 
 function malta_html_minify(o, options) {
-	var self = this,
+	const self = this,
 		namePack = this.outName,
 		start = new Date(),
-		msg,
-		pluginName = path.basename(path.dirname(__filename));
+        pluginName = path.basename(path.dirname(__filename));
+        
+    let msg;
 	
-	return function (solve, reject){
+	return (solve, reject) => {
         try {
             o.content = minify(o.content, options);
-            fs.writeFile(namePack, o.content, function(err) {
+            fs.writeFile(namePack, o.content, err => {
                 err && self.doErr(err, o, pluginName);
                 msg = 'plugin ' + pluginName.white() + ' wrote ' + namePack + ' (' + self.getSize(namePack) + ')';
                 err

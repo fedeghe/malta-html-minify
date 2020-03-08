@@ -21,8 +21,7 @@
         "url": "https://github.com/fedeghe/malta-html-minify/issues"
     },
     "dependencies": {
-        "html-minifier": "^3.5.21",
-        "malta": "^4.0.4"
+        "html-minifier": "4.0.0"
     },
     "main": "./index.js"
 }
